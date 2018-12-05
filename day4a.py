@@ -30,19 +30,25 @@ guard_minutes = {}
 guards = []
 
 for i in data:
-    pass
-
-for i in data:
     guard_minutes[i[1].id] = [0 for j in range(60)]
     for j in guard_minutes[i[1].id]:
         pass
 
 for i in data:
     if i[1].status == 1:
+        for j in guard_minutes[i[1].id]:
+            pass
+
+for i in data:
+    if i[1].status == 1:
         if i[1].id in guard_minutes:
             guard_minutes[i[1].id][i[0].minute] += 1
+
         else:
             guard_minutes[i[1].id][i[0].minute] = 1
+    else:
+        pass
+
 
 most_asleep = list(guard_minutes.keys())[list(guard_minutes.values()).index(max(guard_minutes.values()))]
 out = [(sum(guard_minutes[guard]), max(guard_minutes[guard])) for guard in guard_minutes]
