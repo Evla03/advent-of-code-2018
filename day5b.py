@@ -26,9 +26,10 @@ results = {}
 old_data = None
 for i in lowercase:
     tmp_data = data
-    tmp_data.replace(i, "")
-    tmp_data.replace(i.upper(), "")
-    print("Removed", i)
+
+    tmp_data = tmp_data.replace(i, "")
+    tmp_data = tmp_data.replace(i.upper(), "")
+    print("Removed", i, results)
     while tmp_data != old_data:
         old_data = tmp_data
         tmp_data = parse(tmp_data)
@@ -37,4 +38,4 @@ for i in lowercase:
     # print(data)
 
 # THIS IS REALLY, REALLY, REALLY SLOW
-print(min(results, key=lambda x: results.get(x)))
+print(min(results.values()))
