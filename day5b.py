@@ -1,5 +1,5 @@
 import string as strs
-
+# NOT STACK BASED #
 data = open("input5.txt").read()
 
 uppercase = strs.ascii_uppercase
@@ -29,7 +29,7 @@ for i in lowercase:
 
     tmp_data = tmp_data.replace(i, "")
     tmp_data = tmp_data.replace(i.upper(), "")
-    print("Removed", i, results)
+    # print("Removed", i, results)
     while tmp_data != old_data:
         old_data = tmp_data
         tmp_data = parse(tmp_data)
